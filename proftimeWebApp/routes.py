@@ -5,12 +5,11 @@ from proftimeWebApp.models import User
 @app.route("/login", methods =['GET','POST'])
 def login():
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        # Create variables for easy access
         user = User.query.filter_by(email = request.form['username']).first() #username is same as email in the form(login.html) so pleae change that confusion in future if possible
         if (user.email == request.form['username']) and (bcrypt.check_password_hash(user.password, request.form['password'])):
             return render_template('/profile.html', msg = user.username) 
         else:
-            return render_template('/profile.html', msg = "Wrong Passsword !!!")  
+            return render_template('/login.html', msg = "Wrong Passsword Please try again !!!")  
     else:
         return render_template('/login.html')
 
