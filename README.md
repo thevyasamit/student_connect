@@ -1,1 +1,1 @@
-A web app where student can check whether their Professor are available in the office or not.
+A web app where student can check whether Professors are available in the office or not.
