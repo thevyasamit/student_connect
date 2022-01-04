@@ -8,8 +8,29 @@
 	</head>
 	<body>
 		<div class="login">
-		    <div class="msg"><h1>Welcome {{ msg }} !</h1></div>
-			</form>
+		    <div class="msg"><h1>Welcome {{ usr }}! </h1></div>
+			<p>
+				{{ msg1 }}
+			</p>
+			<p>
+				{{ msg2 }}
+			</p>
+			<p>
+				{{ msg3 }}
+			</p>
+
+		</div>
+		<div class="facultyList">
+			{% for i in facultyList %}
+			<form action="{{ url_for('displayInfo') }}" method="post">
+				<p name = "prof">{{ i }} </p>
+					<input type='text' name='prof' value= "{{ i }}">
+					<input type="submit" value="View">
+					<br>
+				
+					<p>--------------------</p>
+				</form>
+		{%endfor%}
 		</div>
 	</body>
 </html>

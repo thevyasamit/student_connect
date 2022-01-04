@@ -9,3 +9,17 @@ class User(db.Model):
     
     def __repr__(self):
         return f"User('{self.username}', '{self.email}',)"
+    
+class Faculty(db.Model):
+    
+    id = db.Column(db.Integer, primary_key = True)
+    facultyname= db.Column (db.String(120), nullable = False)
+    designation= db.Column (db.String(120), nullable = False)
+    officelocation= db.Column (db.String(160), nullable = False)
+    contactinfo= db.Column (db.String(160), nullable = False)
+    days= db.Column (db.String(120), nullable = False)
+    times= db.Column (db.String(160), nullable = False)
+    
+    def __repr__(self):
+        return f"User('{self.facultyname}', '{self.designation}',)"
+    
